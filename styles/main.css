@@ -1,0 +1,20 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.criminalsContainer {
+    display: flex;
+    margin: 1em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.criminal_container {
+    display: flex;
+    min-width: 20em;
+    margin: 1em;
+    padding: 1em;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: black dotted 1px;
+}
