@@ -7,6 +7,7 @@ code needed to put HTML on it.
 
 import { useCriminals, getCriminals } from './criminalDataProvider.js'
 import { criminals } from './criminal.js'
+import { useConvictions } from '../convictions/convictionProvider.js'
 
 /* Then we need to tell the server WHERE on the page we want this
 HTML-ed code. We store this location in a variable, so we can use it
@@ -15,6 +16,7 @@ and put it there, and then more specifically, use the querySelector
 to say, but at this particular spot on this document.*/
 
 const contentElement = document.querySelector(".criminalsContainer")
+const eventHub = document.querySelector(".container")
 
 /* Now that we have data, and the data is workable javascript, and we
 know where we want this workable javascript data to go, we need to
@@ -23,7 +25,7 @@ AND the HTML, ready to get displayed on the page when called.
  */
 
 
-let criminalCards = []
+//let criminalCards = []
 
 /* Now that we have a place for the HTML Javascript data to go, we 
 need it to actually get turned into the HTML. So first we declare
@@ -39,28 +41,57 @@ array that holds the fancy HTML Javascript data.  By using the join(),
 it lets us make the values in the array a string. Which is more read-
 able.*/
 
-export const criminalList = () => {
-    getCriminals().then( () => {
-            let perps = useCriminals()
+// export const criminalList = () => {
+//     getCriminals().then( () => {
+//             let perps = useCriminals()
 
-            for (const perp of perps) {
-                criminalCards.push(criminals(perp))
-            }
-            contentElement.innerHTML = criminalCards.join("")
-        }
+//             for (const perp of perps) {
+//                 criminalCards.push(criminals(perp))
+//             }
+//             contentElement.innerHTML = criminalCards.join("")
+//         }
        
-    ) 
+//     ) 
+// }
+
+/* 
+We've created a new location above, known as
+eventHub. This is the main tag. We got this 
+location by directing it first to the document,
+then to the class of main using qS. We've stored
+this location in the variable eventHub.
+
+Now we need to tell the eventHub what to listen
+for.
+*/
+
+eventHub.addEventListener("crimeChosen", event => {
+    if (event.detail.crimeThatWasChosen !== "0") {
+        
+        const crimes = useConvictions()
+        const crime = crimes.find((crime) => crime.id === parseInt(event.detail.crimeThatWasChosen))
+        
+        const currentCriminals = useCriminals()
+        const matchingCriminals = currentCriminals.filter((currentCriminal) => { 
+                return currentCriminal.conviction === crime.name })
+        render(matchingCriminals)
+        }
+    
+})
+
+const render = (moreCriminals) => {
+    let criminalCards = []
+    for (const perp of moreCriminals) {
+        criminalCards.push(criminals(perp))
+    }
+    contentElement.innerHTML = criminalCards.join("")
 }
 
 
-/*
-const contentElement = document.querySelector(".criminalsContainer")
-const usedCriminal = useCriminals()
-
-for (const criminalObject of usedCriminal) {
-            const criminalHTML = criminals(criminalObject)
-            contentElement.innerHTML += criminalHTML
-        } */
-
-        // const criminalHTML = criminals(peram)
-        //     contentElement.innerHTML += criminalHTML
+// Render ALL criminals initally
+export const CriminalList = () => {
+    getCriminals().then(() => {
+        let perps = useCriminals()
+        render(perps)
+        })
+}

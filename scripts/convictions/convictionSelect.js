@@ -88,7 +88,7 @@ const render = convictionsCollection => {
             ${
                 convictionsCollection.map(
                     (crime) => {
-                        return `<option value="${crime.name}">${crime.name}</option>`
+                        return `<option value="${crime.id}">${crime.name}</option>`
                     }
                 )
             }
@@ -98,7 +98,7 @@ const render = convictionsCollection => {
 
 /* 
 
-Above, we added in a cosnt called eventHub, to 
+Above, we added in a const called eventHub, to 
 be a commonplace of exchanging info. We used
 document.qS to locate the page, and the main
 element, using it's class of container.
@@ -115,13 +115,13 @@ eventHub.addEventListener("change", event => {
     //'crimeSlect' element was changed
     if (event.target.id === "crimeSelect") {
         //create custom event
-        const crimeSelectChange = new CustomEvent("crimeChosen", {
+        const customEvent = new CustomEvent("crimeChosen", {
             detail: {
                 crimeThatWasChosen: event.target.value
             }
         })
 
-        eventHub.dispatchEvent(crimeSelectChange)
+        eventHub.dispatchEvent(customEvent)
     }
 
 })
