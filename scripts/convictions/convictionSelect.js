@@ -21,6 +21,8 @@ and then more specifically using the querySelector, tell it to
 search for the element that has the class of filters__crime. We need
 to be able to reference that location, so we store it in a variable.
 */
+
+const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".filters__crime")
 
 /*
@@ -93,3 +95,33 @@ const render = convictionsCollection => {
         </select>
     `
 }
+
+/* 
+
+Above, we added in a cosnt called eventHub, to 
+be a commonplace of exchanging info. We used
+document.qS to locate the page, and the main
+element, using it's class of container.
+
+Now we need to tell it to listen for something to
+happen, knowing that eventHub is listen for 
+a change to happen to it, or to it's children
+elements.
+
+*/
+
+eventHub.addEventListener("change", event => {
+    //We want it to do the following, only if the
+    //'crimeSlect' element was changed
+    if (event.target.id === "crimeSelect") {
+        //create custom event
+        const crimeSelectChange = new CustomEvent("crimeChosen", {
+            detail: {
+                crimeThatWasChosen: event.target.value
+            }
+        })
+
+        eventHub.dispatchEvent(crimeSelectChange)
+    }
+
+})
