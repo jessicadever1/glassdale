@@ -8,6 +8,8 @@ ConvictionSelect()
 import { officerSelect } from './officers/officerSelect.js'
 officerSelect()
 
+import { NoteForm } from './notes/noteForm.js'
+NoteForm()
 /*
 What are we trying to do today?
 
