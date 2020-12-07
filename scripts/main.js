@@ -5,6 +5,9 @@ CriminalList()
 import { ConvictionSelect } from './convictions/convictionSelect.js'
 ConvictionSelect()
 
+import { officerSelect } from './officers/officerSelect.js'
+officerSelect()
+
 /*
 What are we trying to do today?
 
@@ -29,4 +32,14 @@ CriminalList updates the DOM with the filtered
     criminal data
 
 ConvictionSelect 
+
+
+On 12/7/20 - we're working on adding the officers,
+and being able to sort by the arresting officer
+
+1. Import allllll of the officers
+   -this will be in dataProvider
+2. Get officers to populate on the page in HTML
+3. Be able to select an officer, and populate the
+criminals that they have selected.
 */

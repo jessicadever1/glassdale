@@ -8,6 +8,7 @@ code needed to put HTML on it.
 import { useCriminals, getCriminals } from './criminalDataProvider.js'
 import { criminals } from './criminal.js'
 import { useConvictions } from '../convictions/convictionProvider.js'
+import { useOfficers } from '../officers/officerDataProvider.js'
 
 /* Then we need to tell the server WHERE on the page we want this
 HTML-ed code. We store this location in a variable, so we can use it
@@ -95,3 +96,16 @@ export const CriminalList = () => {
         render(perps)
         })
 }
+
+eventHub.addEventListener("officerChosen", event => {
+    if (event.detail.officerThatWasChosen !=="0") {
+        
+        const officers = useOfficers()
+        const officer = officers.find((o) => o.id === parseInt(event.detail.arrestingOfficer))
+    
+        const currentCriminals = useCriminals()
+        const matchingCriminals = currentCriminals.filter((currentCriminal) => { 
+                return currentCriminal.arrestingOfficer === officer.name })
+        render(matchingCriminals)    
+    }
+})
