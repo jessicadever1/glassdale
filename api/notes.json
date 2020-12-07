@@ -1,0 +1,25 @@
+{
+  "notes": [
+    {
+      "timestamp": "12/7/20",
+      "text": "This is one shifty dude.",
+      "suspect": "Mr. Green",
+      "author": "Jess Dever",
+      "id": 1
+    },
+    {
+      "timestamp": 1607378353274,
+      "author": "jes",
+      "suspect": "jes",
+      "text": "jes",
+      "id": 2
+    },
+    {
+      "timestamp": 1607378452152,
+      "author": "ah",
+      "suspect": "ahhhhh",
+      "text": "ahhh",
+      "id": 3
+    }
+  ]
+}
