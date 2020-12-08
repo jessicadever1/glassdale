@@ -18,3 +18,49 @@
     flex-wrap: wrap;
     border: black dotted 1px;
 }
+
+.header {
+    display: flex;
+    background-color:#083b66;
+    color: white;
+    font-size: 3em;
+}
+
+img {
+    min-width: 5em;
+    margin-right: 1.5em;
+}
+
+.criminal_name {
+    color: #083b66;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+
+.dropdown {
+    margin: .5em;
+    min-height: 2em;
+}
+
+.noteFormContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    padding: .5em 10em .5em 10em;
+}
+
+#text {
+    margin: 1.2em 0em 1.2em 0em;
+    min-height:7em;
+}
+
+#saveNote {
+    margin-top: 1.2em;
+    background-color: #083c66ea;
+    color: white;
+    border-radius: .5em;
+}
