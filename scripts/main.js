@@ -1,7 +1,6 @@
 import { CriminalList } from './criminals/criminalList.js'
 CriminalList()
 
-
 import { ConvictionSelect } from './convictions/convictionSelect.js'
 ConvictionSelect()
 
@@ -10,6 +9,12 @@ officerSelect()
 
 import { NoteForm } from './notes/noteForm.js'
 NoteForm()
+
+import { ShowNoteButton } from './notes/showNotesButton.js'
+ShowNoteButton()
+
+import "./notes/notesList.js"
+
 /*
 What are we trying to do today?
 

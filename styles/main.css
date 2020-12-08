@@ -64,3 +64,61 @@ img {
     color: white;
     border-radius: .5em;
 }
+
+.note {
+    margin: .5em 1em .5em 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* border: black dotted 1px; */
+    min-width: 10em;
+    background-color: white;
+}
+
+.noteList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.nonHeaderContainer {
+    display: flex;
+}
+
+.pushRight {
+    /* border: black dotted 1px; */
+    background-color: #083c661a; 
+    min-width: 12em;
+    padding: 1em;
+    margin-right: 2em;
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+
+.note__text {
+    margin-top: .5em
+} 
+
+h2 {
+    display: flex;
+    justify-content: center;
+    color: #083c66ea;
+    margin-bottom: 0;
+}
+
+#showNotes {
+    margin-top: 1.2em;
+    background-color: #083c66ea;
+    color: white;
+    border-radius: .5em;
+}
+
+.noteListButton {
+    display: flex;
+    justify-content: center;
+}
+
+.criminal_name {
+    margin-bottom: 1em;
+}
