@@ -10,19 +10,36 @@
 <body>
 
     <main class="container">
-        <header>
-            <div class="header">
-                <img src="./images/PD.png" alt="sherrifs badge">
-                <h1>Glassdale PD</h1>
+        
+            <header>
+                <div class="header">
+                    <img src="./images/PD.png" alt="sherrifs badge">
+                    <h1>Glassdale PD</h1>
+                </div>
+                
+            </header>
+            
+        <div class="nonHeaderContainer">
+            
+            <div class="pushLeft"> 
+                
+                <div class="filters">
+                    <div class="filter filters__crime"></div>
+                    <div class="filter filters__incarceration"></div>
+                    <div class="filter filters__officer"></div>
+                </div>
+
+                <article class="noteFormContainer"></article>
+                <article class="criminalsContainer"></article>
             </div>
-            <div class="filters">
-                <div class="filter filters__crime"></div>
-                <div class="filter filters__incarceration"></div>
-                <div class="filter filters__officer"></div>
+            <div class="pushRight">
+                <aside class="noteListContainer">
+                    <h2>Notes</h2>
+                    <div class="noteListButton"></div>
+                    <article class="noteList"></article>
+                </aside>
             </div>
-        </header>
-        <article class="noteFormContainer"></article>
-        <article class="criminalsContainer"></article>
+        </div>
     </main>
 
     <script type="module" src="./scripts/main.js"></script>
