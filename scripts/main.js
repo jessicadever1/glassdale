@@ -1,3 +1,5 @@
+//using localhost 8088 to serve json//
+
 import { CriminalList } from './criminals/criminalList.js'
 CriminalList()
 
@@ -110,4 +112,26 @@ Then we need to also be able to LIST it out on the page to be
 displayed to the "user." Historically, the dataProvider and 
 criminal.js feed into the List component, which then feeds into
 the main.js. 
+
+Then we did import getCriminals and useCriminals... but event-
+ually scrapped that for some eventListeners...
+
+Chpt 3:
+In this chapter we're beginning the process of filtering the
+criminals by the type of crimes they've committed. We want to be
+able to use a dropdown button to list out all of the crimes, so
+that the user can select a crime, and (eventually) when they do, it
+will list out which criminals commited that crime.
+
+We create two new components. The first being the ConvictionProvider,
+the second being the ConvictionSelect.
+
+Starting with the provider. We've got to get the data about convictions
+from our API. 
+
+...for details, go to convicition provider...
+
+Then we build our select element within the ConvictionSelect.js. Since
+we need BOTH the data and the copy of the data itself, we import both
+the getConvictions and the useConvictions from the provider.
 */
