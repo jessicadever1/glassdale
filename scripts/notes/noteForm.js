@@ -15,7 +15,9 @@ const render = () => {
     contentTarget.innerHTML = `
     <input type="text" id="noteAuthor" placeholder="Your name...">
     <textarea id="text" placeholder="Write your note here..."></textarea>
-    <input type="text" id="suspect" placeholder="Suspect name...">
+    <select id="noteForm--criminal" class="criminalSelect">
+        <option value="${ criminal.id }">${ criminal.name }</option>
+    </select>
     <button id="saveNote">Save Note</button>
     `
 }

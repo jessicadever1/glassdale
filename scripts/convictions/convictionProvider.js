@@ -1,5 +1,5 @@
 /*
-We need to get a working list together of criminals. A list is an 
+We need to get a working list together of crimes. A list is an 
 array, so we declare a variable whose value is an array.
 */
 
@@ -23,7 +23,7 @@ we want. But we need to make this info useable. So first, we get the
 info from the API using fetch. The info is currently living at the URL
 within the fetch peren's. So fetch goes to that URL, and brings back
 that info. Since it takes time to do this, we give ourselves some
-leeway, but adding a .then(). Once the info is fetched, the first
+leeway, by adding a .then(). Once the info is fetched, the first
 .then will turn the info that is in JSON and turn it into javascript.
 So now we have some javascript data to work with. The next .then()
 takes that data in a variable/perameter and the thing we're doing
