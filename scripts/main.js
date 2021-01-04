@@ -1,3 +1,5 @@
+//using localhost 8088 to serve json//
+
 import { CriminalList } from './criminals/criminalList.js'
 CriminalList()
 
