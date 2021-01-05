@@ -4,7 +4,7 @@
  * 
  * Jess notes: 
  * We are building an option to select a specific crime, for sorting
- * pursposes. So we need a list of the crimes. First we need to be
+ * purposes. So we need a list of the crimes. First we need to be
  * able to retrieve the data, which we've already built in Provider
  * and called it getConvictions. Then we need to put the javascript
  * data into a new array, which we've done with useConvictions. So
@@ -35,7 +35,7 @@ Since this has the fetch feature in it, we need to give it the time
 buffer of .then(). So once the getConvictions goes and fetches the 
 data, converts it to JS and then makes it usable we want to put it
 in an array. To make the array usable, we store it in a new variable
-called convictions and use useConvictions to actully build this array.
+called convictions and use useConvictions to actually build this array.
 Now that we have a list, and the list is in javascript, we need to
 turn this list into HTML. We're going to build a function and store
 it in a variable called render, to do that. 
@@ -56,11 +56,11 @@ So we have a variable called contentTarget, that tells the DOM where
 to put what we're pushing in it. And we're going to use innerHTML to
 actually do the job of putting it there. The thing we're going to put
 there is the HTML select button, and the options within it. Since
-there are multiplel options, we need to give the option tags values,
+there are multiple options, we need to give the option tags values,
 so that we can reference the specific value elsewhere. We provide 
 the javascript data that is the value of a specific crime (like theft)
 by looping through an array of crimes. AKA convictions. 
-convictionsCollection is our perameter/placeholder/variable that 
+convictionsCollection is our parameter/placeholder/variable that 
 accepts the variable convictions, which is the value of the function
 useConvictions, which is the array of crimes. So we're looping through
 that using .map(). We're calling each of the objects within the array
