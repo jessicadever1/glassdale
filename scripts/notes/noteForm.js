@@ -5,18 +5,30 @@ write a render function that will use innerHTML
 to shove all that code where we want it.
 */
 import {saveNote} from './noteDataProvider.js'
+import {useCriminals, getCriminals} from '../criminals/criminalDataProvider.js'
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
 
 
-
 const render = (criminal) => {
+    let criminalsCollection = useCriminals()
+
     contentTarget.innerHTML = `
     <input type="text" id="noteAuthor" placeholder="Your name...">
     <textarea id="text" placeholder="Write your note here..."></textarea>
-    <select id="noteForm--criminal" class="criminalSelect">
-        <option value="${ criminal.id }">${ criminal.name }</option>
+    <select id="criminalId" class="criminalSelect">
+        <option value="0">Please select a suspect...</option>
+            ${
+                criminalsCollection.map(
+                    (criminal) => {
+                        return `
+                        <option value="${criminal.id}">${criminal.name}
+                        </option>
+                        `
+                    }
+                )
+            }
     </select>
     <button id="saveNote">Save Note</button>
     `
@@ -28,13 +40,13 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
 
         const author = document.querySelector("#noteAuthor").value
-        const suspect = document.querySelector("#suspect").value
+        const criminalId = parseInt(document.querySelector("#criminalId").value)
         const text = document.querySelector("#text").value
         // Make a new object representation of a note
         const newNote = {
             timestamp: Date.now(),
             author: author,
-            suspect: suspect,
+            criminalId: criminalId,
             text: text
         }
 
@@ -44,5 +56,6 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 export const NoteForm = () => {
-    render()
+    getCriminals()
+    .then(() => render())
 }
