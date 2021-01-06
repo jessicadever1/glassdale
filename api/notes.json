@@ -3,65 +3,9 @@
     {
       "timestamp": "12/7/20",
       "text": "This is one shifty dude.",
-      "suspect": "Mr. Green",
+      "criminalId": 1,
       "author": "Jess Dever",
       "id": 1
-    },
-    {
-      "timestamp": 1607378353274,
-      "author": "jes",
-      "suspect": "jes",
-      "text": "jes",
-      "id": 2
-    },
-    {
-      "timestamp": 1607378452152,
-      "author": "ah",
-      "suspect": "ahhhhh",
-      "text": "ahhh",
-      "id": 3
-    },
-    {
-      "timestamp": 1607445235837,
-      "author": "Jess",
-      "suspect": "Ms. Peacock",
-      "text": "Does this work this mornign?",
-      "id": 4
-    },
-    {
-      "timestamp": 1607447817323,
-      "author": "Jess",
-      "suspect": "Ms. Scarlet",
-      "text": "I think it was Ms. Scarlet, in the Study, with the Candle Stick.",
-      "id": 5
-    },
-    {
-      "timestamp": 1607455633384,
-      "author": "Jess",
-      "suspect": "Professor Plum",
-      "text": "I think it was Professor Plum in the Billiard Room with the Revolver",
-      "id": 6
-    },
-    {
-      "timestamp": 1607459390419,
-      "author": "Jess",
-      "suspect": "Ben",
-      "text": "New Note",
-      "id": 7
-    },
-    {
-      "timestamp": 1607459397467,
-      "author": "Jess",
-      "suspect": "Ben",
-      "text": "New Note",
-      "id": 8
-    },
-    {
-      "timestamp": 1607615407840,
-      "author": "Jessica Elizabeth Dever",
-      "suspect": "Ms. Peacock",
-      "text": "This morning I realized that it was Mr. Plum who served JSON incorrectly yesterday. And it was that, that was keeping my notes from serving correctly. So he was busy serving incorrectly, thus I'm ruling out him and the dining room. However, Ms. Peacock was making sure everything on this page is a shade of blue which seems shifty. So she is my main suspect.",
-      "id": 9
     }
   ]
 }
