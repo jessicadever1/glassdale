@@ -6,6 +6,13 @@
       "criminalId": 1,
       "author": "Jess Dever",
       "id": 1
+    },
+    {
+      "timestamp": 1610041567469,
+      "author": "Jess",
+      "criminalId": 4,
+      "text": "Here is a note",
+      "id": 2
     }
   ]
 }

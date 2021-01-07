@@ -9,6 +9,8 @@ import { useCriminals, getCriminals } from './criminalDataProvider.js'
 import { criminals } from './criminal.js'
 import { useConvictions } from '../convictions/convictionProvider.js'
 import { useOfficers } from '../officers/officerDataProvider.js'
+import { getFacilities, useFacilities } from '../facilities/facilityProvider.js'
+import { useCriminalFacilities, getCriminalFacilities } from '../facilities/criminalFacilityProvider.js'
 
 /* Then we need to tell the server WHERE on the page we want this
 HTML-ed code. We store this location in a variable, so we can use it
@@ -75,7 +77,10 @@ eventHub.addEventListener("crimeChosen", event => {
         const currentCriminals = useCriminals()
         const matchingCriminals = currentCriminals.filter((currentCriminal) => { 
                 return currentCriminal.conviction === crime.name })
-        render(matchingCriminals)
+        
+        const facilities = useFacilities() 
+        const criminalFacilities = useCriminalFacilities()       
+        render(matchingCriminals, facilities, criminalFacilities)
         }
     
 })
@@ -88,10 +93,32 @@ const render = (moreCriminals) => {
     contentElement.innerHTML = criminalCards.join("")
 }
 
+// const render = (criminalsToRender, allFacilities, allRelationships) => {
+//     // Step 1 - Iterate all criminals
+//     contentElement.innerHTML = criminalsToRender.map(
+//         (criminalObject) => {
+//             // Step 2 - Filter all relationships to get only ones for this criminal
+//             const facilityRelationshipsForThisCriminal = allRelationships.filter(cf => cf.criminalId === criminalObject.id)
+
+//             // Step 3 - Convert the relationships to facilities with map()
+//             const facilities = facilityRelationshipsForThisCriminal.map(cf => {
+//                 const matchingFacilityObject = allFacilities.find(facility => facility.id === cf.facilityId)
+//                 return matchingFacilityObject
+//             })
+
+//             // Must pass the matching facilities to the Criminal component
+//             return criminals(criminalObject, facilities)
+//         }
+//     ).join("")
+// }
+
 
 // Render ALL criminals initally
 export const CriminalList = () => {
-    getCriminals().then(() => {
+    getCriminals()
+    .then(getFacilities)
+    .then(getCriminalFacilities)
+    .then(() => {
         let perps = useCriminals()
         render(perps)
         })
@@ -107,5 +134,17 @@ eventHub.addEventListener("officerChosen", event => {
         const matchingCriminals = currentCriminals.filter((currentCriminal) => { 
                 return currentCriminal.arrestingOfficer === officer.name })
         render(matchingCriminals)    
+    }
+})
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id.startsWith("associates--")) {
+        const secondHalfOfId = event.target.id.split("--")
+        const customEvent = new CustomEvent("associateAlibiBtnClicked", {
+            detail: {
+                associateId: secondHalfOfId
+            }
+        })
+    eventHub.dispatchEvent(customEvent)    
     }
 })
