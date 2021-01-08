@@ -130,3 +130,21 @@ h2 {
 .deleteNoteBtn {
     margin-top: 1rem;
 }
+
+.knownAssDialogBox {
+    border:  black dotted 1px;
+    max-width: 15rem;
+    background-color: #dde4eb; 
+}
+
+.dialogBoxH2 {
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+.ass-details__card {
+    margin-bottom: 1rem;
+}
+
+.alibiSpace {
+    margin-bottom: 1rem;
+}

@@ -35,6 +35,8 @@ locale conventions.
 ...back to main.js...
 */
 
+const eventHub = document.querySelector(".container")
+
 export const criminals = (person, facilities) => {
     return `
         <section class="criminal_container">
@@ -47,6 +49,20 @@ export const criminals = (person, facilities) => {
             </section>
             `
 }
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id.startsWith("associates--")) {
+        const secondHalfOfId = event.target.id.split("--")
+        const customEvent = new CustomEvent("associateAlibiBtnClicked", {
+            detail: {
+                associateId: secondHalfOfId
+            }
+        })
+    eventHub.dispatchEvent(customEvent)    
+    }
+})
+
+
 
             // <div>
             //     <h2>Facilities</h2>
