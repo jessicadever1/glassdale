@@ -8,6 +8,16 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "hideNotes") {
+        const customEvent = new CustomEvent("hideNotesClicked")
+        eventHub.dispatchEvent(customEvent)
+    }
+})
+
 export const ShowNoteButton = () => {
-    contentTarget.innerHTML = "<button id='showNotes'>Show Notes</button>"
+    contentTarget.innerHTML = `
+    <button id='showNotes'>Show Notes</button>
+    <button id='hideNotes'>Hide Notes</button>
+    `
 }

@@ -27,6 +27,7 @@ const assPopUp = (associate) => {
             <div class="assDialogBox">
                 ${assCard(associate)}
             </div>
+            <button id="closeDialog" class="closeDialog">Close</button>
         </div>
     </section>`
 }
@@ -48,4 +49,15 @@ const assCard = (associate) => {
 const openDialogAssociates = (dialogHTML) => {
     dialogPopUp.innerHTML = dialogHTML;
     dialogPopUp.show()
+}
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id === 'closeDialog'){
+        closeAssDialog();
+    }
+})
+
+const closeAssDialog = (taco) => {
+    dialogPopUp.innerHTML = taco;
+    dialogPopUp.close();
 }
