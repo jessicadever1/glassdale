@@ -4,11 +4,29 @@ import { useCriminals } from "../criminals/criminalDataProvider.js"
 
 // Query the DOM for the element that your notes will be added to 
 const contentTarget = document.querySelector(".noteList")
+
 // Define ye olde Evente Hubbe
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
+})
+
+
+// const closeNotes = (taco) => {
+//     contentTarget.innerHTML = taco;
+//     contentTarget.close();
+// }
+
+const closeNotes = () => {
+    const container = document.querySelector(".noteList")
+    container.innerHTML = "";
+}
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id === 'hideNotes'){
+        closeNotes();
+    }
 })
 
 eventHub.addEventListener("click", clickEvent => {
