@@ -35,7 +35,9 @@ locale conventions.
 ...back to main.js...
 */
 
-export const criminals = (person) => {
+const eventHub = document.querySelector(".container")
+
+export const criminals = (person, facilities) => {
     return `
         <section class="criminal_container">
         <div class="criminal_name"><h2>${person.name}</h2></div>
@@ -43,6 +45,28 @@ export const criminals = (person) => {
             <div class="criminal_crime">Crime: ${person.conviction}</div>
             <div class="criminal_date_of_incarceration">Start Date: ${new Date(person.incarceration.start).toLocaleDateString('en-US')}</div>
             <div class="criminal_end_date_of_incarceration">End Date: ${new Date(person.incarceration.end).toLocaleDateString('en-US')}</div>
-        </section>
-    `
+            <button class="assAlBtn" id="associates--${person.id}">Associate Alibis</button>
+            </section>
+            `
 }
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id.startsWith("associates--")) {
+        const secondHalfOfId = event.target.id.split("--")
+        const customEvent = new CustomEvent("associateAlibiBtnClicked", {
+            detail: {
+                associateId: secondHalfOfId
+            }
+        })
+    eventHub.dispatchEvent(customEvent)    
+    }
+})
+
+
+
+            // <div>
+            //     <h2>Facilities</h2>
+            //     <ul>
+            //         ${facilities.map(f => `<li>${f.facilityName}</li>`).join("")}
+            //     </ul>
+            // </div>

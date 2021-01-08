@@ -16,6 +16,7 @@ import { ShowNoteButton } from './notes/showNotesButton.js'
 ShowNoteButton()
 
 import "./notes/notesList.js"
+import "./criminals/knownAssociates.js"
 
 /*
 What are we trying to do today?
