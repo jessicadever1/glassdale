@@ -63,6 +63,7 @@ img {
     background-color: #083c66ea;
     color: white;
     border-radius: .5em;
+    min-height: 1.5rem;
 }
 
 .note {
@@ -159,4 +160,31 @@ h2 {
     width: 100%;
     /* display: flex; */
     /* justify-content: end; */
+}
+
+.witnessCards {
+    display: flex;
+    min-width: 25em;
+    margin: 1em;
+    padding: 1em;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: black dotted 1px;
+    background-color: #083c661a;
+}
+
+#witnessBtn {
+    margin-top: .5em;
+    background-color: #083c66ea;
+    color: white;
+    border-radius: .5em;
+    min-width: 100%;
+    min-height: 1.5rem;
+}
+
+.witnessBtn {
+    display: flex;
+    justify-content: center;
+    max-width: 75%;
+    padding: .5em 10em .5em 10em;  
 }

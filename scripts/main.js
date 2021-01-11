@@ -15,6 +15,10 @@ NoteForm()
 import { ShowNoteButton } from './notes/showNotesButton.js'
 ShowNoteButton()
 
+import { witnessBtn } from './witnesses/showWitnessesBtnComponent.js'
+witnessBtn()
+
+
 import "./notes/notesList.js"
 import "./criminals/knownAssociates.js"
 
@@ -27,15 +31,15 @@ by the crime they committed.
 
 What tasks do we need to complete, to implement
 the feature?
-    filter through the criminals data by matching
-    the crime that was selected
+filter through the criminals data by matching
+   the crime that was selected
 
-    1. Listen for the selection of a crime and 
-       capture the chosen value
-    2. Use the selected value to filter the 
-       criminal data
-    3. Update the DOM with the filtered criminal
-       data
+   1. Listen for the selection of a crime and 
+      capture the chosen value
+   2. Use the selected value to filter the 
+      criminal data
+   3. Update the DOM with the filtered criminal
+      data
 
 Which modules are involved?
 CriminalList updates the DOM with the filtered 
