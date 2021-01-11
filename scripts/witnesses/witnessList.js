@@ -12,6 +12,6 @@ export const renderWitnesses = () => {
         for (const witness of witnesses) {
             witnessCards.push(witnessesHTMLConverter(witness))
         }
-        witnessPlacement.innerHTML += witnessCards.join("")
+        witnessPlacement.innerHTML = witnessCards.join("")
     })
 }
