@@ -2,7 +2,7 @@ import {useWitnesses, getWitnesses} from './witnessDataProvider.js'
 import { witnessesHTMLConverter } from './witnessHTML.js'
 
 const eventHub = document.querySelector(".container")
-const witnessPlacement = document.querySelector(".criminalsContainer")
+const witnessPlacement = document.querySelector(".witnessContainer")
 
 let witnessCards = []
 
@@ -12,6 +12,6 @@ export const renderWitnesses = () => {
         for (const witness of witnesses) {
             witnessCards.push(witnessesHTMLConverter(witness))
         }
-        witnessPlacement.innerHTML += witnessCards.join("")
+        witnessPlacement.innerHTML = witnessCards.join("")
     })
 }
