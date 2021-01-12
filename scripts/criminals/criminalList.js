@@ -136,4 +136,10 @@ eventHub.addEventListener("officerChosen", event => {
         render(matchingCriminals)    
     }
 })
+   // 
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.innerText === `Criminal Cards`) {
+        CriminalList()
+    }
+})
 
