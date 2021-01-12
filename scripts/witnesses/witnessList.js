@@ -2,7 +2,7 @@ import {useWitnesses, getWitnesses} from './witnessDataProvider.js'
 import { witnessesHTMLConverter } from './witnessHTML.js'
 
 const eventHub = document.querySelector(".container")
-const witnessPlacement = document.querySelector(".criminalsContainer")
+const witnessPlacement = document.querySelector(".witnessContainer")
 
 let witnessCards = []
 
